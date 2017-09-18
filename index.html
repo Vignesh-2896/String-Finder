@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<script>
+			function checkstring(val)
+			{
+			 	var len=val.value.length;
+				var x=val.value;
+				if(len<3)
+				{
+					alert("Substring length should be more than 3 characters");
+					val.value="";
+					val.focus();
+				}
+				else
+				{
+				if(/\w/g.test(x)==false) 
+				{
+					alert("Please enter a valid string, no special characters");
+					val.value="";
+					val.focus();
+				}
+				}
+			}	
+		</script>
+	</head>
+	<body>
+		<center><strong><h1> String Finder </h1></strong></center>
+		<form method="POST" action="str.php">
+			<h4> Enter your string to search </h4>
+			<input type="text" name="str" id="str" onchange="checkstring(this)">
+			<input type="submit" value="Submit"> 
+		</form>
+	</body>
+</html>
